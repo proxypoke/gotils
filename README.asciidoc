@@ -1,0 +1,13 @@
+GOTILS(7)
+=========
+:author: slowpoke <mail+git@slowpoke.io
+:encoding: utf-8
+:doctype: manpage
+
+NAME
+----
+gotils - the Go coreutils
+
+DESCRIPTION
+-----------
+This is an attempt to implement the coreutils (not necessarily GNU) in Go.
