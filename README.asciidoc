@@ -11,3 +11,16 @@ gotils - the Go coreutils
 DESCRIPTION
 -----------
 This is an attempt to implement the coreutils (not necessarily GNU) in Go.
+
+PROGRESS
+--------
+
+There are currently implementations for the following coreutils:
+
+cat
+~~~
+Partial implementation. No flags yet.
+
+echo
+~~~~
+Full implementation with all flags (except --version).
