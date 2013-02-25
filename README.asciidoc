@@ -21,13 +21,17 @@ cat
 ~~~
 Partial implementation. No flags yet.
 
+cp
+~~
+Basic implementation.
+
 echo
 ~~~~
 Full implementation with all flags (except --version).
 
-cp
+ln
 ~~
-Basic implementation.
+Basic implementation, no flags yet. Only hard links, obviously.
 
 
 TODO
@@ -49,7 +53,6 @@ the future.
 * dd
 * df
 * false
-* ln
 * ls
 * mkdir
 * mknod
