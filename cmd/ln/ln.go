@@ -20,9 +20,22 @@ import (
 	"path"
 )
 
+// flags
+var (
+	symbolic bool
+)
+
+// The link function to use (default: hard links)
+var link func(string, string) error = os.Link
+
+func init() {
+	flag.BoolVar(&symbolic, "s", false,
+		"create symbolic instead of hard links")
+}
+
 // The first form of ln. Links the target file to the named file.
 func first_form(target, name string) (err error) {
-	err = os.Link(target, name)
+	err = link(target, name)
 	if err != nil {
 		msg.Errln(err)
 	}
@@ -53,6 +66,11 @@ func main() {
 		err   error
 	)
 	flag.Parse()
+
+	if symbolic {
+		// Change the link function from os.Link to os.Symlink.
+		link = os.Symlink
+	}
 
 	paths = flag.Args()
 

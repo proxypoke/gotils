@@ -31,7 +31,7 @@ Full implementation with all flags (except --version).
 
 ln
 ~~
-Basic implementation, no flags yet. Only hard links, obviously.
+Basic implementation, can do hard and soft links. No further flags yet.
 
 
 TODO
