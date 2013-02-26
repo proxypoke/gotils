@@ -33,6 +33,10 @@ ln
 ~~
 Basic implementation, can do hard and soft links. No further flags yet.
 
+mkdir
+~~~~~
+Full implementation with all flags (except --version).
+
 
 TODO
 ----
@@ -54,7 +58,6 @@ the future.
 * df
 * false
 * ls
-* mkdir
 * mknod
 * mv
 * pwd
