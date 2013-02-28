@@ -45,6 +45,10 @@ true
 ~~~~
 Done.
 
+wc
+~~
+Implements byte, char, word, and line count. 
+
 
 TODO
 ----
@@ -89,7 +93,6 @@ the future.
 * date
 * dd
 * df
-* dir
 * dircolors
 * dirname
 * du
@@ -164,8 +167,6 @@ the future.
 * uniq
 * unlink
 * users
-* vdir
-* wc
 * who
 * whoami
 * yes
