@@ -15,31 +15,12 @@ package main
 
 import (
 	"flag"
+	"gotils/shared"
 	"gotils/shared/msg"
-	"io"
 	"os"
+	"path"
 )
 
-func Copy(src, dest string) (err error) {
-    var (
-        src_file, dest_file *os.File
-    )
-	src_file, err = os.Open(src)
-	if err != nil {
-        return
-	}
-	defer src_file.Close()
-
-	dest_file, err = os.Create(dest)
-	if err != nil {
-        return
-	}
-	defer dest_file.Close()
-
-    // Why the hell are the arguments to Copy the wrong way around?
-	_, err = io.Copy(dest_file, src_file)
-    return
-}
 
 func main() {
 	var (
@@ -56,7 +37,16 @@ func main() {
 	}
     src, dest = files[0], files[1]
 
-    err = Copy(src, dest)
+	info, err := os.Stat(dest)
+	if err != nil {
+		msg.Errf("cp: %s\n",err)
+		os.Exit(1)
+	}
+	if info.IsDir() {
+		dest = path.Join(dest, path.Base(src))
+	}
+
+    err = shared.Copy(src, dest)
     if err != nil {
         msg.Errln(err)
         os.Exit(1)

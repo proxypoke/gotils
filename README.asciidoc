@@ -41,6 +41,10 @@ mkdir
 ~~~~~
 Full implementation with all flags (except --version).
 
+mv
+~~
+Basic implementation.
+
 true
 ~~~~
 Done.
@@ -70,7 +74,6 @@ the future.
 * df
 * ls
 * mknod
-* mv
 * pwd
 * rm
 * rmdir
@@ -112,7 +115,6 @@ the future.
 * logname
 * ls
 * md5sum
-* mkdir
 * mkfifo
 * mknod
 * mktemp
