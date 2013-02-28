@@ -1,0 +1,22 @@
+// gotils - the Go coreutils
+//
+// Author: slowpoke <mail+git@slowpoke.io>
+//
+// This program is free software under the non-terms
+// of the Anti-License. Do whatever the fuck you want.
+//
+// Github: https://www.github.com/proxypoke/gotils
+//
+// Format options for vim. Please adhere to them.
+// vim: set et ts=4 sw=4 tw=80:
+
+// false - do nothing, exit unsuccessfully
+package main
+
+import (
+	"os"
+)
+
+func main() {
+	os.Exit(1)
+}
