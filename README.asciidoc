@@ -172,3 +172,11 @@ the future.
 * who
 * whoami
 * yes
+
+FREEBSD
+~~~~~~~
+
+Some utils from FreeBSD which I want to implement, too:
+
+* apply
+* shuffle
