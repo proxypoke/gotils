@@ -31,18 +31,9 @@ func main() {
 	}
 	src, dest := files[0], files[1]
 
-	info, err := os.Stat(dest)
-	if err != nil {
-		msg.Errf("cp: %s\n", err)
-		os.Exit(1)
-	}
-	if info.IsDir() {
-		dest = path.Join(dest, path.Base(src))
-	}
-
 	err = shared.Copy(src, dest)
 	if err != nil {
-		msg.Errln(err)
+		msg.Errf("cp: %s\n", err)
 		os.Exit(1)
 	}
 }
