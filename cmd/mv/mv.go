@@ -18,7 +18,6 @@ import (
 	"gotils/shared"
 	"gotils/shared/msg"
 	"os"
-	"path"
 )
 
 func main() {
@@ -33,30 +32,23 @@ func main() {
 	case 2:
 		src, dest := paths[0], paths[1]
 
-		info, err := os.Stat(dest)
-		if err != nil {
-			msg.Errf("mv: %s\n",err)
-			os.Exit(1)
-		}
-		if info.IsDir() {
-			dest = path.Join(dest, path.Base(src))
-		}
-
-		err = os.Rename(src, dest)
-		if err != nil {
-			// most likely a cross-device link was attempted,
-			// try copy/delete instead.
-			err = shared.Copy(src, dest)
-			if err == nil {
-				os.Remove(src)
-			}
-		}
+		err := shared.Move(src, dest)
 		if err != nil {
 			msg.Errf("mv: %s\n", err)
 			os.Exit(1)
 		}
+	// More than 2 arguments.
 	default:
-		msg.Errln("Not implemented yet.")
-	}
+		srcs, dest := paths[:len(paths)-1], paths[len(paths)-1]
 
+		var exitcode int
+		for _, src := range srcs {
+			err := shared.Move(src, dest)
+			if err != nil {
+				msg.Errf("mv: %s\n", err)
+				exitcode++
+			}
+		}
+		os.Exit(exitcode)
+	}
 }

@@ -21,34 +21,28 @@ import (
 	"path"
 )
 
-
 func main() {
-	var (
-		files               []string
-		src, dest           string
-		err                 error
-	)
 	flag.Parse()
 
-	files = flag.Args()
+	files := flag.Args()
 	if len(files) != 2 {
 		msg.Errln("Need 2 arguments.")
 		os.Exit(1)
 	}
-    src, dest = files[0], files[1]
+	src, dest := files[0], files[1]
 
 	info, err := os.Stat(dest)
 	if err != nil {
-		msg.Errf("cp: %s\n",err)
+		msg.Errf("cp: %s\n", err)
 		os.Exit(1)
 	}
 	if info.IsDir() {
 		dest = path.Join(dest, path.Base(src))
 	}
 
-    err = shared.Copy(src, dest)
-    if err != nil {
-        msg.Errln(err)
-        os.Exit(1)
-    }
+	err = shared.Copy(src, dest)
+	if err != nil {
+		msg.Errln(err)
+		os.Exit(1)
+	}
 }

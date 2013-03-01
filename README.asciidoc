@@ -90,7 +90,6 @@ the future.
 * chroot
 * cksum
 * comm
-* cp
 * csplit
 * cut
 * date
@@ -118,7 +117,6 @@ the future.
 * mkfifo
 * mknod
 * mktemp
-* mv
 * nice
 * nl
 * nohup
