@@ -18,7 +18,6 @@ import (
 	"gotils/shared"
 	"gotils/shared/msg"
 	"os"
-	"path"
 )
 
 func main() {
@@ -31,7 +30,7 @@ func main() {
 	}
 	src, dest := files[0], files[1]
 
-	err = shared.Copy(src, dest)
+	err := shared.Copy(src, dest)
 	if err != nil {
 		msg.Errf("cp: %s\n", err)
 		os.Exit(1)
