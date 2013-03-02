@@ -16,7 +16,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"gotils/shared"
+	"github.com/proxypoke/gotils/shared"
 	"strings"
 )
 

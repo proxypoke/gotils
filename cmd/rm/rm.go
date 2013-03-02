@@ -15,7 +15,7 @@ package main
 
 import (
 	"flag"
-	"gotils/shared/msg"
+	"github.com/proxypoke/gotils/shared/msg"
 	"os"
 	"path"
 )
