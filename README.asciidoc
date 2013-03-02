@@ -45,6 +45,12 @@ mv
 ~~
 Basic implementation.
 
+rm & rmdir
+~~~~~~~~~~
+rm and rmdir are implemented as a single utility, rm. First basic
+implementation.
+
+
 true
 ~~~~
 Done.
@@ -75,8 +81,6 @@ the future.
 * ls
 * mknod
 * pwd
-* rm
-* rmdir
 * stty
 * sync
 * uname
